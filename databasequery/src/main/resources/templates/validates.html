@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Validate Data</title>
+<link rel="stylesheet"
+ href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+ integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+ crossorigin="anonymous">
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div th:replace="components/nav.html :: navbar"></div>
+<h1 class="text-center">Verify Details Entered</h1>
+<table  class="table table-dark">    
+<tr>    
+<td><h4>User Name: </h4></td>    
+<td><h4 th:text="${data_entry.name}"></h4></td>    
+</tr>    
+<tr>    
+<td><h4>Account No: </h4></td>    
+<td><h4 th:text="${data_entry.account_no}"></h4></td>   
+</tr>
+<tr>    
+<td><h4>Address: </h4></td>    
+<td><h4 th:text="${data_entry.address}"></h4></td>    
+</tr>
+<tr>    
+<td><h4>no_of_year: </h4></td>    
+<td><h4 th:text="${data_entry.no_of_year}"></h4></td>    
+</tr>
+</table>
+<div class="form-row">
+<div class="form-group col-md-1">
+<form action="/"><button type="submit" class="btn btn-primary btn-dark">Back</button></form>
+</div>
+<div class="form-group col-md-1">
+<form action="/uploaded" >
+<button type="submit" class="btn btn-primary btn-dark">Submit</button>
+</div>
+</form>
+</div>
+
+</body>
+</head>  
+</html>

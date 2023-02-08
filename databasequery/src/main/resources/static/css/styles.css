@@ -1,0 +1,10 @@
+.box {
+    background-image: url('downloads.jpg');
+    background-size: contain;
+    height: fit-content;
+    width:   fit-content;
+  }
+
+  h1 {
+    color: red;
+  }

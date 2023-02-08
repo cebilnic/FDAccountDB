@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Account Details</title>
+<link rel="stylesheet"
+ href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+ integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+ crossorigin="anonymous">
+</head>
+<body>
+  <div th:replace="components/nav.html :: navbar"></div>
+  <h1 class="text-center">Account Details</h1>
+  <h4>Hi, Find your account details</h4>
+  <table  class="table table-dark">    
+<tr>    
+<td><h4>User Name: </h4></td>    
+<td><h4 th:text="${data_entry.name}"></h4></td>    
+</tr>    
+<tr>    
+<td><h4>Account No: </h4></td>    
+<td><h4 th:text="${data_entry.account_no}"></h4></td>   
+</tr>
+<tr>    
+<td><h4>Address: </h4></td>    
+<td><h4 th:text="${data_entry.address}"></h4></td>    
+</tr>
+<tr>    
+<td><h4>no_of_year: </h4></td>    
+<td><h4 th:text="${data_entry.no_of_year}"></h4></td>    
+</tr>
+</table>
+  <form action="/" >
+  <button type="submit" class="btn btn-primary btn-lg">Return to Home</button>
+  </form>
+</body>
+</html>

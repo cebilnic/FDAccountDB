@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>View all data</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <script type="text/javascript" th:src="@{/js/view.js}"></script>
+  </head>
+  <body>
+    <div th:replace="~{components/nav.html :: navbar}"></div>
+    <h1 class="text-center">View all Account Details</h1>
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Account No</th>
+          <th scope="col">Name</th>
+          <th scope="col">Address</th>
+          <th scope="col">Deposite Date</th>
+          <th scope="col">Deposit Amount</th>
+          <th scope="col">Years</th>
+          <th scope="col">Maturity Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="accountinfo: ${accinfos}">
+          <td th:text="${accountinfo.account_no}" />
+          <td th:text="${accountinfo.name}" />
+          <td th:text="${accountinfo.Address}" />
+          <td th:text="${accountinfo.deposite_date}" />
+          <td th:text="${accountinfo.deposit_amount}" />
+          <td th:text="${accountinfo.no_of_year}" />
+          <td th:text="${accountinfo.maturity_amt}" />
+          <td>
+            <a
+              th:href="@{/files/{id}(id=${accountinfo.account_no})}"
+              download
+              class="btn btn-info btn-sm"
+              >Download</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div th:if="${error}">
+      <script>
+        alert("[[${error}]]");
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<div th:fragment="navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" th:href="@{/}"
+            >Home <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/accountentry}">Add Account Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/viewAll}">Accounts Grid View</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/uploadDocument}">Upload Document</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Edit Accounts</a>
+        </li>
+        <div th:if="'enable' == ${dropbox}">
+          <li class="nav-item dropdown" th:if="${dropbox}">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Edit My Account
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" th:href="@{/editName}">Name</a>
+              <a class="dropdown-item" th:hre="@{/editAddress}">Address</a>
+            </div>
+          </li>
+        </div>
+      </ul>
+      <form class="form-inline my-2 my-lg-0" action="/accountdetails">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Account Number"
+          aria-label="Search"
+          name="acn"
+        />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
+    </div>
+  </nav>
+</div>
